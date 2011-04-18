@@ -6,13 +6,13 @@ Requires at least: 2.9
 Tested up to: 3.1.1
 Stable tag: 1.0
 
-Helps you to embed TEDTalks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
+Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
 == Description ==
 
-Helps you to embed TEDTalks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
+Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
-First time you see a TEDTalk video embedded in your site, the plugin needs to grab the sharing HTML code for that video from TED.com
+First time you see a TED Talk video embedded in your site, the plugin needs to grab the sharing HTML code for that video from TED.com
 After that first load, the embedding code is stored in one custom field, so no need to grab the code again from TED.com
 
 By the way, this plugin has been specially made for TEDxZaragoza 'The Future of Happiness', an independently organized TED event that
@@ -22,7 +22,7 @@ will take place on November 5, 2011 in Zaragoza (Spain).
 
 After installation and activation of the plugin.
 
-- Locate the TEDTalk that you want to embed in your WordPress site.
+- Locate the TED Talk that you want to embed in your WordPress site.
 - Press the Share button and copy the shortcode for WordPress.com (i.e. [ted id=1048] )
 - Paste the shorcode in your post or page and click on Preview button to check that is ok.
 
