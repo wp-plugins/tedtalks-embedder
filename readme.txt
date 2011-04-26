@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: TED, Talks, TEDx
 Requires at least: 2.9
 Tested up to: 3.1.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
