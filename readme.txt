@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: TED, Talks, TEDx
 Requires at least: 2.9
 Tested up to: 3.2.1
-Stable tag: 1.0.2
+Stable tag: 1.1
 
 Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
@@ -48,6 +48,10 @@ Also, if the TED Talk has subtitles available, you can use the enable subtitles 
 * Extract the zip file and just drop the contents in the <code>wp-content/plugins/</code> directory of your WordPress installation (or install it directly from your dashboard) and then activate the Plugin from Plugins page.
 
 == Changelog ==
+
+= 1.1 =
+
+* Big rewrite of the plugin to use WordPress Shortcode API for better perfomance and compatibility.
 
 = 1.0.2 =
 
