@@ -10,6 +10,8 @@ Helps you to embed TED Talks videos on your self hosted WordPress simply using s
 
 == Description ==
 
+**NOTE:** This plugin **will not work anymore** due to changes made by TED in their web pages code. Making impossible to grab the necessary code to embed the videos.
+
 Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
 First time you see a TED Talk video embedded in your site, the plugin needs to grab the sharing HTML code for that video from TED.com
