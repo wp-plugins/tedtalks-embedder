@@ -17,7 +17,19 @@ By the way, this plugin was specially made for TEDxZaragoza 'The Future of Happi
 
 **This plugin is not affiliated in any way with TED Conferences, LLC**.
 
-== Usage ==
+= Features =
+
+* Easy and simple usage
+* Uses same shortcode used for WordPress.com
+* You can set default values (in Settings -> Media) width, height, and language of TED Talks.
+* Supports multiple TED Talks in the same post
+
+= Requirements =
+
+* WordPress 3.8.1 or higher.
+* You can't have Jetpack's shortcodes module activated.
+
+= Usage =
 
 Follow the same [instructions](http://en.support.wordpress.com/videos/ted-talks/) that you can read for WordPress.com
 
@@ -31,18 +43,6 @@ Some shortcodes examples:
 If you want to set default width, height and language values for your TED Talks, go to Settings --> Media to set the values and omit values defined in the shortcode (last example).
 
 NOTE: **You can't use this plugin and Jetpack's shortcodes module at the same time**. But you can use this plugin and Jetpack if you deactivate first the Jetpack's shortcodes module.
-
-= Features =
-
-* Easy and simple usage
-* Uses same shortcode used for WordPress.com
-* You can set default values (in Settings -> Media) width, height, and language of TED Talks.
-* Supports multiple TED Talks in the same post
-
-= Requirements =
-
-* WordPress 3.8.1 or higher.
-* You can't have Jetpack's shortcodes module activated.
     	
 == Installation ==
 
