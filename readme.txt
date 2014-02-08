@@ -1,10 +1,11 @@
 === TEDTalks Embedder ===
 Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2UT9S9ACVEHHL
-Tags: TED, Talks, TEDx
-Requires at least: 2.9
-Tested up to: 3.2.1
-Stable tag: 1.1
+Tags: TED, Talks, TEDx, TEDTalks
+Requires at least: 3.8.1
+Tested up to: 3.8.1
+Stable tag: 2.0
+License: GPL3
 
 Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
@@ -12,42 +13,51 @@ Helps you to embed TED Talks videos on your self hosted WordPress simply using s
 
 Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
-First time you see a TED Talk video embedded in your site, the plugin needs to grab the sharing HTML code for that video from TED.com
-After that first load, the embedding code is stored in one custom field, so no need to grab the code again from TED.com
+By the way, this plugin was specially made for TEDxZaragoza 'The Future of Happiness', an independently organized TED event that was held on November 5, 2011 in Zaragoza (Spain).
 
-By the way, this plugin has been specially made for TEDxZaragoza 'The Future of Happiness', an independently organized TED event that
-will take place on November 5, 2011 in Zaragoza (Spain).
+**This plugin is not affiliated in any way with TED Conferences, LLC**.
 
 == Usage ==
 
-After installation and activation of the plugin.
+Follow the same [instructions](http://en.support.wordpress.com/videos/ted-talks/) that you can read for WordPress.com
 
-- Locate the TED Talk that you want to embed in your WordPress site.
-- Press the Share button and copy the shortcode for WordPress.com (i.e. [ted id=1048] )
-- Paste the shorcode in your post or page and click on Preview button to check that is ok.
+Some shortcodes examples:
 
-You're done.
+* [ted id="210" lang="eng"]
+* [ted id="http://www.ted.com/talks/view/id/210" lang="eng"]
+* [ted id=210 lang=fr width=560 height=315]
+* [ted id="210"]
 
-Also, if the TED Talk has subtitles available, you can use the enable subtitles option to choose your lang and use that code (i.e. [ted id=1048 lang=spa] )
+If you want to set default width, height and language values for your TED Talks, go to Settings --> Media to set the values and omit values defined in the shortcode (last example).
+
+NOTE: **You can't use this plugin and Jetpack's shortcodes module at the same time**. But you can use this plugin and Jetpack if you deactivate first the Jetpack's shortcodes module.
 
 = Features =
 
 * Easy and simple usage
 * Uses same shortcode used for WordPress.com
-* You can choose to force your desired language for subtitles (if available for that TEDTalk)
+* You can set default values (in Settings -> Media) width, height, and language of TED Talks.
 * Supports multiple TED Talks in the same post
-* Stores embed HTML code in a custom field, so no need to grab the code again from TED.com
 
 = Requirements =
 
-* WordPress 2.9 or higher.
-* fopen or CURL must be available in your host and allowed to get pages from external sites.
+* WordPress 3.8.1 or higher.
+* You can't have Jetpack's shortcodes module activated.
     	
 == Installation ==
 
 * Extract the zip file and just drop the contents in the <code>wp-content/plugins/</code> directory of your WordPress installation (or install it directly from your dashboard) and then activate the Plugin from Plugins page.
 
+== Screenshots ==
+
+1. TEDTalks Embedder settings in Settings --> Media settings page.
+
 == Changelog ==
+
+= 2.0 =
+
+* Adopted Jetpack 2.8 TED shortcode source.
+* Added settings for default width, height, and language values. 
 
 = 1.1 =
 

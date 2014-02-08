@@ -1,63 +1,89 @@
 <?php
 /*
-Plugin Name: TEDTalks Embedder
-Plugin URI: http://www.samuelaguilera.com
-Description: Helps you to embed TEDTalks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
-Version: 1.1
-Author: Samuel Aguilera
-Author URI: http://www.samuelaguilera.com
+* Plugin Name: TEDTalks Embedder
+* Plugin URI: http://www.samuelaguilera.com
+* Description: Embeds TEDTalks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
+* Version: 2.0
+* Author: Samuel Aguilera
+* Author URI: http://www.samuelaguilera.com
+* License: GPL3
 */
 
+// Check for activated Jetpack, and deactivate TEDTalks Embedder in that case.
 
-add_shortcode('ted', 'sar_ted_talk_shortcode');
+function TTE_Check_Jetpack_Shortcodes_Module() {
+
+  $TTE_plugin = plugin_basename( __FILE__ );
+ 
+  if ( class_exists('Jetpack', false ) ) {
+
+      if (Jetpack::init()->is_module_active( 'shortcodes' )) {
+
+	      deactivate_plugins( $TTE_plugin );
+
+	      function TTE_Jetpack_Found() {
+	          ?>
+	          <div class="error">
+	              <p><?php _e( "TEDTalks Embedder <b>can't be used with Jetpack's shortcodes module activated</b>. TEDTalks Embedder has been deactivated!.", 'tedtalks' ); ?></p>
+	          </div>
+	          <?php
+	      }
+	      add_action( 'admin_notices', 'TTE_Jetpack_Found' );
+
+  	}
+  }
+}
+
+add_action( 'admin_init', 'TTE_Check_Jetpack_Shortcodes_Module' );
+
+//Load translation file if any for the current language
+load_plugin_textdomain('tedtalks', PLUGINDIR . '/' . plugin_basename(dirname(__FILE__)) . '/locale');
+
+// Settings page
+
+add_action( 'admin_init', 'TTE_Settings_init' );
+function TTE_Settings_init() {
+    register_setting( 'media', 'tte_settings' );
+    add_settings_section( 'tte_section', 'TED Talks', 'TTE_settings_callback', 'media' );
+    add_settings_field( 'tte_width', __('Width'), 'tte_width_field', 'media', 'tte_section' );
+    add_settings_field( 'tte_height', __('Height'), 'tte_height_field', 'media', 'tte_section' );
+    add_settings_field( 'tte_lang', __('Language', 'tedtalks'), 'tte_lang_field', 'media', 'tte_section' );
+}
+
+function TTE_settings_callback() {
+	_e('These default settings are used <b>only</b> when you omit them in your TED Talk shortcode.', 'tedtalks');
+}
 
 
-    function sar_ted_talk_shortcode($attr) {
-    
-      global $post;
-    
-      $ted_talk_meta = get_post_meta($post->ID, 'ted_talk_'.$attr['id'], 'true');
-      
-        if (empty($ted_talk_meta)) {
-    
-             if (empty($attr['lang'])) {
-                $ted_talk_language = 'eng';   
-             } else {
-                $ted_talk_language = $attr['lang'];   
-             }
-             
-          $ted_talk_url = 'http://www.ted.com/talks/view/lang/'.$ted_talk_language.'/id/'.$attr['id'];
-          $ted_talk_url = wp_remote_get($ted_talk_url);
-      
-          $ted_talk_page = wp_remote_retrieve_body($ted_talk_url);
-          $ted_talk_page = htmlspecialchars_decode($ted_talk_page);
-          $ted_talk_embbed = preg_match('/(<!--copy and paste-->)((<object[^>]*?>(?:[\s\S]*?)<\/object>))/i', $ted_talk_page, $matches);
+function tte_width_field() {
+	$options = get_option( 'tte_settings' );
+	$width_value = $options['tte_width']; ?>
 
-                           
-            if($ted_talk_embbed)                                    
-              {
-                  add_post_meta($post->ID, 'ted_talk_'.$attr['id'], $matches[2], true);
+	<input name="tte_settings[tte_width]" type="number" step="1" min="0" id="tte_width" value="<?php echo $width_value ?>" class="small-text" /><br />
 
-              } else {
-              
-                 add_post_meta($post->ID, 'ted_talk_'.$attr['id'], "Can't get data from TED.com or embed data is missing.", true);
-              }
+    <?php
+}
 
+function tte_height_field() {
+	$options = get_option( 'tte_settings' );
+	$height_value = $options['tte_height']; ?>
 
-          // Next two lines only for testing. Uncomment them to add HTTP response code to your post.
-        //  $reponsde_code = wp_remote_retrieve_response_code($ted_talk_url);
-        //  add_post_meta($post->ID, 'response_code_tedtalk_'.$attr['id'], $reponsde_code, true);
-          
-                return ($matches[2]); 
-          
-            }	else {
-            
-              $ted_talk_meta = get_post_meta($post->ID, 'ted_talk_'.$attr['id'], true);
-              
-                return ($ted_talk_meta);
-            
-            }              
-    
-    }  // end sar_ted_talk_shortcode
+	<input name="tte_settings[tte_height]" type="number" step="1" min="0" id="tte_height" value="<?php echo $width_value ?>" class="small-text" /><br />
+
+    <?php
+}
+
+function tte_lang_field() {
+	$options = get_option( 'tte_settings' );
+	$lang_value = $options['tte_lang']; ?>
+
+    <input type="text" name="tte_settings[tte_lang]" value="<?php echo $lang_value ?>" class="small-text"/><br />
+    <label for="tte_lang"><?php _e("Empty for english. If you don't know your language code, check an embed code at TED.com", 'tedtalks'); ?></label>
+
+    <?php
+}
+
+// TED Player embed code from Jetpack 2.8. Credit goes to Jetpack authors.
+require_once ('inc/ted.php');
 
 ?>
