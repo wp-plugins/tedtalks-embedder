@@ -1,7 +1,7 @@
 === TEDTalks Embedder ===
 Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2UT9S9ACVEHHL
-Tags: TED, Talks, TEDx, TEDTalks
+Tags: TED, Talks, TEDx, TEDTalks, oEmbed
 Requires at least: 3.8.1
 Tested up to: 3.8.1
 Stable tag: 2.0
@@ -57,7 +57,8 @@ NOTE: **You can't use this plugin and Jetpack's shortcodes module at the same ti
 = 2.0 =
 
 * Adopted Jetpack 2.8 TED shortcode source.
-* Added settings for default width, height, and language values. 
+* Added settings for default width, height, and language values.
+* Removed code for the cache function. Maybe will back in a future version. 
 
 = 1.1 =
 
