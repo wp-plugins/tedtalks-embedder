@@ -3,7 +3,7 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2UT9S9ACVEHHL
 Tags: TED, Talks, TEDx, TEDTalks, oEmbed
 Requires at least: 3.8.1
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: 2.0
 License: GPL3
 
