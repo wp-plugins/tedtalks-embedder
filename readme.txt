@@ -3,7 +3,7 @@ Contributors: samuelaguilera
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2UT9S9ACVEHHL
 Tags: TED, Talks, TEDx, TEDTalks, oEmbed
 Requires at least: 3.8.1
-Tested up to: 4.0
+Tested up to: 4.2.1
 Stable tag: 2.0
 License: GPL3
 
@@ -13,9 +13,9 @@ Helps you to embed TED Talks videos on your self hosted WordPress simply using s
 
 Helps you to embed TED Talks videos on your self hosted WordPress simply using same shortcode used for WordPress.com
 
-By the way, this plugin was specially made for TEDxZaragoza 'The Future of Happiness', an independently organized TED event that was held on November 5, 2011 in Zaragoza (Spain).
-
 **This plugin is not affiliated in any way with TED Conferences, LLC**.
+
+IMPORTANT: **You can't use this plugin and Jetpack's shortcodes module at the same time**. But you can use this plugin and Jetpack if you deactivate first the Jetpack's shortcodes module.
 
 = Features =
 
@@ -42,7 +42,7 @@ Some shortcodes examples:
 
 If you want to set default width, height and language values for your TED Talks, go to Settings --> Media to set the values and omit values defined in the shortcode (last example).
 
-NOTE: **You can't use this plugin and Jetpack's shortcodes module at the same time**. But you can use this plugin and Jetpack if you deactivate first the Jetpack's shortcodes module.
+By the way, this plugin was specially made for TEDxZaragoza 'The Future of Happiness', an independently organized TED event that was held on November 5, 2011 in Zaragoza (Spain).
     	
 == Installation ==
 
